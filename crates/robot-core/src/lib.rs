@@ -115,10 +115,12 @@ pub fn tensor_to_kg(data: i32) -> f32 {
 }
 
 pub fn tension_to_speed(tension: i32) -> u32 {
-    let tolerance = 3_000;
+    let tolerance = 4_000;
+    // TODO:
+    // это правило не особо помогает, потому что он топчется на границе ВНЕ, а не внутри области...
     if tension <= tension - tolerance / 2 && tension >= tension + tolerance / 2 {
         0
     } else {
-        tension as u32 * 15
+        tension as u32 * 20
     }
 }
